@@ -1,4 +1,3 @@
-// App.js
 
 import React from "react";
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
@@ -7,13 +6,14 @@ import DetailsCollection from "./components/DetailsCollection";
 import DocumentCollection from "./components/DocumentCollection";
 import StatementOfPurpose from "./components/StatementOfPurpose";
 import InterviewAvailability from "./components/InterviewAvailability";
+import "./App.css";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div style={{ display: "flex" }}>
+      <div className="app-container">
         {/* Sidebar */}
-        <div style={{ width: "200px", background: "#f0f0f0", padding: "10px" }}>
+        <div className="sidebar">
           <Link to="/new-form">NewForm</Link>
           <br />
           <Link to="/details-collection">Details Collection</Link>
@@ -25,8 +25,10 @@ const App = () => {
           <Link to="/interview-availability">Interview Availability</Link>
         </div>
 
-        {/* Main content */}
-        <div style={{ flex: 1, padding: "20px" }}>
+
+
+
+        <div className="main-content">
           <Routes>
             <Route path="/new-form" element={<NewForm />} />
             <Route path="/details-collection" element={<DetailsCollection />} />
