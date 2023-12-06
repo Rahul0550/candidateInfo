@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function InterviewAvailability() {
+  const [selectedTimeZone, setSelectedTimeZone] = useState("");
+
+  var aryIanaTimeZones = Intl.supportedValuesOf("timeZone");
+
+  const languageOptions = [
+    "Hindi",
+    "English",
+    "Spanish",
+    "French",
+    "German",
+    "Russian",
+  ];
+
   return (
     <>
-      <div className="Top">
+      {/* <div className="Top">
         <h3> Name of the Enquiry Form</h3>
-      </div>
+      </div> */}
       <div>
+
         <div className="form-group">
           <label>1. Email*</label>
           <br />
@@ -42,22 +56,38 @@ export default function InterviewAvailability() {
         <div className="form-group">
           <label>5. Time Zone</label>
           <br />
-          <input
-            type="dropdown"
-            placeholder="Search or Select a timezone from below"
-          />
+          <select
+            value={selectedTimeZone}
+            onChange={(e) => setSelectedTimeZone(e.target.value)}
+          >
+            <option value="" disabled>
+              Select a timezone
+            </option>
+            {aryIanaTimeZones.map((timeZone) => (
+              <option key={timeZone} value={timeZone}>
+                {timeZone}
+              </option>
+            ))}
+          </select>
           <br />
         </div>
 
         <div className="form-group">
           <label>6. Interview Medium</label>
           <br />
-          <input
-            type="dropdown"
-            placeholder="Search or Select medium of Interview from below"
-          />
+          <select>
+            <option value="" disabled selected>
+              Search or Select medium of Interview from below
+            </option>
+            {languageOptions.map((language, index) => (
+              <option key={index} value={language}>
+                {language}
+              </option>
+            ))}
+          </select>
           <br />
         </div>
+        
       </div>
     </>
   );

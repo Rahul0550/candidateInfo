@@ -5,30 +5,43 @@
 
 .sidebar {
   width: 25%; 
-  background: #f0f0f0;
+  background: #f0f0f093;
   padding: 20px;
 }
 
 .sidebar a {
-  display: block;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
   margin-bottom: 10px; 
   text-decoration: none;
-  color: #333;
+  color: black;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  border: 2px solid black;
+  height: 5vw;
+  text-align: center;
 }
 
 .sidebar a:hover {
   background-color: #ddd;
 }
 
+input{
+  width: 20vw;
+  height: 3vh;
+}
+
 .main-content {
   flex: 1; 
+  align-items: center;
+  justify-content: baseline;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin: 40px 80px;
+  margin: 5% 5%;
+  border: 2px solid black;
 }
 
 .Top {
@@ -41,5 +54,5 @@
   justify-content: space-between; */
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }

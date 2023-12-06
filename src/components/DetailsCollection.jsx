@@ -3,9 +3,9 @@ import React from "react";
 export default function DetailsCollection() {
   return (
     <>
-      <div className="Top">
+      {/* <div className="Top">
         <h3> Name of the Enquiry Form</h3>
-      </div>
+      </div> */}
       <div className="form-container">
         <div className="form-group">
           <label>1. Name*</label>

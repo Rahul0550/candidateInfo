@@ -1,36 +1,35 @@
-
-import React from "react";
-import { BrowserRouter, Route, Link, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NewForm from "./components/NewForm";
 import DetailsCollection from "./components/DetailsCollection";
 import DocumentCollection from "./components/DocumentCollection";
 import StatementOfPurpose from "./components/StatementOfPurpose";
 import InterviewAvailability from "./components/InterviewAvailability";
 import "./App.css";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
+  const [name, setName] = useState('');
+
   return (
+
     <BrowserRouter>
+      <div style={{ backgroundColor: "cyan",height:"50px" }}>
+        <h3>Stepper</h3>
+      </div>
+
       <div className="app-container">
-        {/* Sidebar */}
-        <div className="sidebar">
-          <Link to="/new-form">NewForm</Link>
-          <br />
-          <Link to="/details-collection">Details Collection</Link>
-          <br />
-          <Link to="/document-collection">Document Collection</Link>
-          <br />
-          <Link to="/statement-of-purpose">Statement of Purpose</Link>
-          <br />
-          <Link to="/interview-availability">Interview Availability</Link>
-        </div>
-
-
-
+        <Sidebar />
 
         <div className="main-content">
+          <div className="inside-header">
+          <h2 style={{ background: "cyan", height: "50px" }}>
+              {name ? `Enquiry Form for- ${name}` : "Set Name of the enquiry form"}
+            </h2>
+          </div>
+
           <Routes>
-            <Route path="/new-form" element={<NewForm />} />
+            <Route path="/new-form" element={<NewForm setName={setName} />} />
             <Route path="/details-collection" element={<DetailsCollection />} />
             <Route
               path="/document-collection"
@@ -47,6 +46,16 @@ const App = () => {
           </Routes>
         </div>
       </div>
+      <button
+        style={{
+          color: "blue",
+          backgroundColor: "Red",
+          width: "300px",
+          margin: "0 40%",
+        }}
+      >
+        Next
+      </button>
     </BrowserRouter>
   );
 };

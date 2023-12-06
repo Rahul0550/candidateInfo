@@ -14,9 +14,9 @@ export default function DocumentCollection() {
 
   return (
     <>
-      <div className="Top">
+      {/* <div className="Top">
         <h3> Name of the Enquiry Form</h3>
-      </div>
+      </div> */}
       <div>
         <div className="form-group">
         <label>1. 10th Marksheet*</label>
