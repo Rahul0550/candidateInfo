@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 
 export default function FileUploader({ onFileSelect, onFileSelectError, onFileSelectSuccess }) {
     const fileInput = useRef(null);
@@ -12,6 +13,9 @@ export default function FileUploader({ onFileSelect, onFileSelectError, onFileSe
         } else {
             onFileSelectSuccess(file);
         }
+        if (onFileSelect) {
+            onFileSelect(file);
+        }
     };
 
     return (
@@ -22,5 +26,10 @@ export default function FileUploader({ onFileSelect, onFileSelectError, onFileSe
             </button>
         </div>
     );
-};
+}
 
+FileUploader.propTypes = {
+    onFileSelect: PropTypes.func,
+    onFileSelectError: PropTypes.func,
+    onFileSelectSuccess: PropTypes.func,
+};

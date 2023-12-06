@@ -3,6 +3,14 @@ import FileUploader from "./FileUploader";
 
 export default function DocumentCollection() {
   const [selectedFile, setSelectedFile] = useState(null);
+  console.log(selectedFile);
+  const handleFileSelect = (file) => {
+    setSelectedFile(file);
+  };
+
+  const handleFileSelectError = ({ error }) => {
+    alert(error);
+  };
 
   return (
     <>
@@ -13,64 +21,64 @@ export default function DocumentCollection() {
         <label>1. 10th Marksheet*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>2. 12th Marksheet*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>3. Graduation Marksheet*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>4. Post Graduation Marksheet</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>5. Offer Letter*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>6. Salary Slip*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>7. Bank Statement*</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>8. Increment Letter(if any)</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
         <br />
         <label>9. Others (if any)</label>
         <br />
         <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
+          onFileSelectSuccess={handleFileSelect}
+          onFileSelectError={handleFileSelectError}
         />
       </div>
     </>
