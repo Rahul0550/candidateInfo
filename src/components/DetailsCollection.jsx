@@ -4,7 +4,7 @@ export default function DetailsCollection() {
   return (
     <>
     <div className='Top'>
-    <h1> Name of the Enquiry Form</h1>
+    <h3> Name of the Enquiry Form</h3>
     </div>
     <div>
         <label>1. Name*</label>
