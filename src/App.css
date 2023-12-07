@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.container-outer{
+.container-outer {
   background: #ebe8e8;
 }
 
@@ -14,17 +14,17 @@
   max-height: 999px;
 }
 
-.heading-child{
+.heading-child {
   display: flex;
   justify-content: center;
   box-shadow: 2px 5px 6px 1px lightgrey;
 }
 
-h2.form-heading{
+h2.form-heading {
   padding: 34px 0px 20px 35px;
 }
 
-h4{
+h4 {
   display: inline-block;
 }
 
@@ -67,8 +67,6 @@ input[type="text"] {
   font-size: 20px;
 }
 
-
-
 .sidebar a:hover {
   background-color: #ddd;
 }
@@ -91,14 +89,13 @@ input {
   flex: 1;
   /* align-items: center; */
   justify-content: baseline;
-  padding: 0px 0px 0px 0px; 
+  padding: 0px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   margin: 2% 2% 2% 1%;
   border: 1.2px solid gray;
   border-radius: 7px;
-  
-  
+
   background-color: grey;
 }
 
@@ -107,9 +104,8 @@ input {
   margin-bottom: 20px;
 }
 
-.inside-header  {
-  background: #b3d8f4;
-  /* height: 10vh; */
+.inside-header {
+  background: #dceefa;
   display: flex;
   word-spacing: 2px;
   /* justify-content: center; */
@@ -120,9 +116,8 @@ input {
   position: relative;
   bottom: 15px;
   margin: 15px 0px 25px 0px;
-  box-shadow: 2px 5px 6px 1px #a3bbe8;
 }
-.main-content{
+.main-content {
   align-items: center;
   width: 85%;
   background-color: white;
@@ -132,7 +127,7 @@ input {
   padding-left: 25px;
 }
 
-span#btm-text{
+span#btm-text {
   position: relative;
   bottom: 14px;
   left: 26px;
@@ -155,10 +150,11 @@ span#btm-text{
 
 .button-container {
   display: flex;
-    justify-content: space-between;
-    background: whitesmoke;
-    margin: 0px 0;
-    padding: 6px 0px 0px 0px;
+  position: sticky;
+  justify-content: space-between;
+  background: whitesmoke;
+  margin: 0px 0;
+  padding: 6px 0px 0px 0px;
 }
 
 .heading-main h3 {
@@ -167,7 +163,9 @@ span#btm-text{
   font-size: 30px;
 }
 
-.inside-header {width: 100% !important;}
+.inside-header {
+  width: 100% !important;
+}
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
