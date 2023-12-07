@@ -22,28 +22,36 @@ const App = () => {
         <Sidebar />
 
         <div className="main-content">
+
           <div className="inside-header">
-          <h2 style={{ background: "cyan", height: "50px" }}>
+          <h2 >
               {name ? `Enquiry Form for- ${name}` : "Set Name of the enquiry form"}
             </h2>
           </div>
 
-          <Routes>
-            <Route path="/new-form" element={<NewForm setName={setName} />} />
-            <Route path="/details-collection" element={<DetailsCollection />} />
-            <Route
-              path="/document-collection"
-              element={<DocumentCollection />}
-            />
-            <Route
-              path="/statement-of-purpose"
-              element={<StatementOfPurpose />}
-            />
-            <Route
-              path="/interview-availability"
-              element={<InterviewAvailability />}
-            />
-          </Routes>
+          <div className="space-between-container">
+            <div className="main-content">
+
+              <Routes>
+                <Route path="/new-form" element={<NewForm setName={setName} />} />
+                <Route path="/details-collection" element={<DetailsCollection />} />
+                <Route
+                  path="/document-collection"
+                  element={<DocumentCollection />}
+                />
+                <Route
+                  path="/statement-of-purpose"
+                  element={<StatementOfPurpose />}
+                />
+                <Route
+                  path="/interview-availability"
+                  element={<InterviewAvailability />}
+                />
+            </Routes>
+
+            </div>
+          </div>
+          
         </div>
       </div>
       <button

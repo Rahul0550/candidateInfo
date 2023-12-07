@@ -1,10 +1,10 @@
 .app-container {
   display: flex;
-  height: 100vh; 
+  height: 100vh;
 }
 
 .sidebar {
-  width: 25%; 
+  width: 25%;
   background: #f0f0f093;
   padding: 20px;
 }
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   text-decoration: none;
   color: black;
   border-radius: 5px;
@@ -28,31 +28,72 @@
   background-color: #ddd;
 }
 
-input{
+input {
   width: 20vw;
   height: 3vh;
 }
+.space-between-container {
+  flex: 1;
+  width: 85%;
+  background-color: white
+}
 
 .main-content {
-  flex: 1; 
-  align-items: center;
+  flex: 1;
+  /* align-items: center; */
   justify-content: baseline;
-  padding: 20px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  margin: 5% 5%;
+  margin: 2% 2% 2% 0;
+  padding-top: 5%;
   border: 2px solid black;
+  background-color: grey;
 }
 
 .Top {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.inside-header h2 {
+  background: rgb(169, 237, 237);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1vw;
+  height: 100%;
+}
+.main-content{
+  align-items: center;
+  width: 85%;
+}
 .form-container {
   margin-top: 20px;
-  /* justify-items: auto;
-  justify-content: space-between; */
 }
+
 .form-group {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .main-content {
+    margin: 5% 2%;
+  }
+
+  input {
+    width: 100%;
+  }
 }
