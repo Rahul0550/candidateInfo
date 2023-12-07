@@ -2,14 +2,20 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-export default function Sidebar() {
+// Inside Sidebar.js
+export default function Sidebar({ activePage, pages }) {
   return (
-<div className="sidebar">
-      <Link to="/new-form">NewForm</Link>
-      <Link to="/details-collection">Details Collection</Link>
-      <Link to="/document-collection">Document Collection</Link>
-      <Link to="/statement-of-purpose">Statement of Purpose</Link>
-      <Link to="/interview-availability">Interview Availability</Link>
+    <div className="sidebar">
+      {pages.map((page, index) => (
+        <Link to={page} key={index} className={activePage === page ? 'active' : ''}>
+          {getPageName(page)}
+        </Link>
+      ))}
     </div>
-    )
+  );
+}
+
+function getPageName(page) {
+  // Extract the name from the URL (e.g., "/new-form" becomes "New Form")
+  return page.split('-').slice(1).map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }

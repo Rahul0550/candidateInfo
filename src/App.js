@@ -10,6 +10,27 @@ import Sidebar from "./components/Sidebar";
 
 const App = () => {
   const [name, setName] = useState('');
+  const [activePage, setActivePage] = useState('/new-form');
+  
+  const pages = [
+    '/new-form',
+    '/details-collection',
+    '/document-collection',
+    '/statement-of-purpose',
+    '/interview-availability',
+  ];
+
+  const handleNextClick = () => {
+    const currentIndex = pages.indexOf(activePage);
+    const nextIndex = currentIndex < pages.length - 1 ? currentIndex + 1 : currentIndex;
+    setActivePage(pages[nextIndex]);
+  };
+
+  const handlePreviousClick = () => {
+    const currentIndex = pages.indexOf(activePage);
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : currentIndex;
+    setActivePage(pages[prevIndex]);
+  };
 
   return (
 
@@ -19,7 +40,7 @@ const App = () => {
       </div>
 
       <div className="app-container">
-        <Sidebar />
+        <Sidebar activePage={activePage} pages={pages} />
 
         <div className="main-content">
 
@@ -54,16 +75,31 @@ const App = () => {
           
         </div>
       </div>
-      <button
-        style={{
-          color: "blue",
-          backgroundColor: "Red",
-          width: "300px",
-          margin: "0 40%",
-        }}
-      >
-        Next
-      </button>
+      <div className="button-container">
+        <button
+          style={{
+            color: "blue",
+            backgroundColor: "Red",
+            width: "150px",
+            marginRight: "20px",
+          }}
+          onClick={handlePreviousClick}
+          disabled={pages.indexOf(activePage) === 0}
+        >
+          Previous
+        </button>
+        <button
+          style={{
+            color: "blue",
+            backgroundColor: "Red",
+            width: "150px",
+          }}
+          onClick={handleNextClick}
+          disabled={pages.indexOf(activePage) === pages.length - 1}
+        >
+          Next
+        </button>
+      </div>
     </BrowserRouter>
   );
 };
