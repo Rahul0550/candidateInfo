@@ -88,17 +88,19 @@ const App = () => {
           />
 
           <div className="main-content">
-          <h1>Preview</h1>
-          <p>You will be able to change the fields in the later stage</p>
+          {/* <h1>Preview</h1>
+          <p>You will be able to change the fields in the later stage</p> */}
             <div className="inside-header">
-              <h2>
-                Name of the Enquiry Form
-              </h2>
-              <br/>
-              <p>One line description</p>
-              <br/>
-              <br/>
-              <p>Provide the following information to process your application</p>
+            <div className="heading-text">
+
+<h2>Name of the Enquiry Form</h2>
+<p><span id="btm-text">One line description</span></p>
+
+
+
+<p className="very-btm">Provide the following information to process your application</p>
+</div>
+
             </div>
 
             <div className="space-between-container">

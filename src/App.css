@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.container-outer {
+.container-outer{
   background: #ebe8e8;
 }
 
@@ -11,17 +11,28 @@
   width: 25%;
   background: #eeeded;
   padding: 20px;
-  position: relative;
-  max-height: 981px;
-  top: 16px;
-  border-radius: 8px;
+  max-height: 999px;
 }
 
-.heading-child {
+.heading-child{
   display: flex;
   justify-content: center;
+  box-shadow: 2px 5px 6px 1px lightgrey;
 }
 
+h2.form-heading{
+  padding: 34px 0px 20px 35px;
+}
+
+h4{
+  display: inline-block;
+}
+
+input[type="text"] {
+  margin-top: 15px;
+  border-radius: 3px;
+  border: 1.6px solid grey;
+}
 .checkbox-round {
   width: 1.3em;
   height: 1.3em;
@@ -51,10 +62,12 @@
   transition: background-color 0.3s ease;
   border: 1.6px solid #bbb2b2;
   box-shadow: 2px 5px 6px 1px #a3bbe8;
-  height: 7vw;
+  height: 8vw;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
 }
+
+
 
 .sidebar a:hover {
   background-color: #ddd;
@@ -78,13 +91,14 @@ input {
   flex: 1;
   /* align-items: center; */
   justify-content: baseline;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px; 
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 7%;
+  margin: 2% 2% 2% 1%;
   border: 1.2px solid gray;
   border-radius: 7px;
-
+  
+  
   background-color: grey;
 }
 
@@ -93,25 +107,39 @@ input {
   margin-bottom: 20px;
 }
 
-.inside-header {
+.inside-header  {
   background: #b3d8f4;
+  /* height: 10vh; */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; /* Set flex direction to column */
-  width: 100%;
+  word-spacing: 2px;
+  /* justify-content: center; */
+  width: auto;
   margin: 1vw;
   height: 155px !important;
+  box-shadow: 2px 5px 6px 1px #a3bbe8;
   position: relative;
   bottom: 15px;
-  padding: 0;
   margin: 15px 0px 25px 0px;
-
+  box-shadow: 2px 5px 6px 1px #a3bbe8;
 }
-.main-content {
+.main-content{
   align-items: center;
   width: 85%;
   background-color: white;
+}
+
+.heading-text h2 {
+  padding-left: 25px;
+}
+
+span#btm-text{
+  position: relative;
+  bottom: 14px;
+  left: 26px;
+  font-weight: 500;
+}
+.very-btm {
+  padding-left: 25px;
 }
 
 .main-content .inner-box {
@@ -127,11 +155,10 @@ input {
 
 .button-container {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 5px;
-  padding: 15px;
-  background-color: whitesmoke;
-  ;
+    justify-content: space-between;
+    background: whitesmoke;
+    margin: 0px 0;
+    padding: 6px 0px 0px 0px;
 }
 
 .heading-main h3 {
@@ -140,13 +167,7 @@ input {
   font-size: 30px;
 }
 
-.inside-header {
-  width: 100% !important;
-}
-
-.heading-child h4 {
-  display: inline-block;
-}
+.inside-header {width: 100% !important;}
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
