@@ -45,7 +45,7 @@ input {
   padding: 8px;
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 0;
+  margin: 2% 2% 2% 7%;
   padding-top: 5%;
   border: 2px solid black;
   background-color: grey;
@@ -58,7 +58,7 @@ input {
 
 .inside-header h2 {
   background: rgb(169, 237, 237);
-  height: 50px;
+  /* height: 10vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,6 +69,7 @@ input {
 .main-content{
   align-items: center;
   width: 85%;
+  background-color: white;
 }
 .form-container {
   margin-top: 20px;
