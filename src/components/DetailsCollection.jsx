@@ -17,13 +17,12 @@ export default function DetailsCollection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     setFormSubmitted(true);
   };
 
   return (
     <>
-    
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -69,9 +68,9 @@ export default function DetailsCollection() {
             <label>4. Contact No*</label>
             <br />
             <input
-              type="number"
+              type="text"
               placeholder="Enter your 10-digit contact no"
-              pattern="[1-9]{1}[0-9]{9}"
+              pattern="[0-9]{10}"
               name="contactNo"
               value={formData.contactNo}
               onChange={handleInputChange}
