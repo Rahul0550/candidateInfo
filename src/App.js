@@ -66,7 +66,7 @@ const App = () => {
         <div className="heading-main">
           <div className="heading-child">
             <div className="input-field">
-              <input type="checkbox" className="checkbox-round" />
+              <input type="checkbox" checked className="checkbox-round" />
               <h4>Form Selection</h4> ---------
               <input type="checkbox" className="checkbox-round" />
               <h4>Set up</h4>---------
