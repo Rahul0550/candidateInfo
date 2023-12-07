@@ -112,7 +112,7 @@ input {
   width: auto;
   margin: 1vw;
   height: 155px !important;
-  box-shadow: 2px 5px 6px 1px #a3bbe8;
+  /* box-shadow: 2px 5px 6px 1px #a3bbe8; */
   position: relative;
   bottom: 15px;
   margin: 15px 0px 25px 0px;
@@ -125,6 +125,7 @@ input {
 
 .heading-text h2 {
   padding-left: 25px;
+  position: relative;
 }
 
 span#btm-text {

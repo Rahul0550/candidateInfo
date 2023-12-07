@@ -53,6 +53,19 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    <div style={{ backgroundColor: "#b3d8f4", height: "65px", marginTop: "0px", display: "inherit", boxShadow: "-6px 0px 9px 3px grey" }}>
+        <div className="heading-main">
+          <div className="heading-child">
+            <div className="input-field">
+              <input type="checkbox" checked className="checkbox-round" /><h4>Form Selection</h4> ---------
+              <input type="checkbox" className="checkbox-round" /><h4>Set up</h4>---------
+              <input type="checkbox" className="checkbox-round" /><h4>Form Creation</h4>---------
+              <input type="checkbox" className="checkbox-round" /><h4>Review</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container-outer">
         <div className="app-container">
           <Sidebar
