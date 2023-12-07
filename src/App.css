@@ -61,7 +61,7 @@ input[type="text"] {
   border-radius: 5px;
   transition: background-color 0.3s ease;
   border: 1.6px solid #bbb2b2;
-  box-shadow: 2px 5px 6px 1px #a3bbe8;
+  /* box-shadow: 2px 5px 6px 1px #a3bbe8; */
   height: 8vw;
   text-align: center;
   font-size: 20px;
@@ -150,10 +150,10 @@ span#btm-text {
 
 .button-container {
   display: flex;
-  position: sticky;
+  position: inherit;
   justify-content: space-between;
   background: whitesmoke;
-  margin: 0px 0;
+  margin: 10px;
   padding: 6px 0px 0px 0px;
 }
 

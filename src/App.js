@@ -9,11 +9,8 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  
   const [activePage, setActivePage] = useState("/new-form");
-
-  const [nextButtonLabel, setNextButtonLabel] = useState('Next');
-
+  const [nextButtonLabel, setNextButtonLabel] = useState("Next");
 
   const pages = [
     "/new-form",
@@ -24,7 +21,7 @@ const App = () => {
   ];
 
   const pageComponents = {
-    "/new-form": <NewForm/>,
+    "/new-form": <NewForm />,
     "/details-collection": <DetailsCollection />,
     "/document-collection": <DocumentCollection />,
     "/statement-of-purpose": <StatementOfPurpose />,
@@ -33,11 +30,13 @@ const App = () => {
 
   const handleNextClick = () => {
     const currentIndex = pages.indexOf(activePage);
-    const nextIndex = currentIndex < pages.length - 1 ? currentIndex + 1 : currentIndex;
+    const nextIndex =
+      currentIndex < pages.length - 1 ? currentIndex + 1 : currentIndex;
     const nextPage = pages[nextIndex];
-  
-    const nextButtonLabel = nextPage === '/interview-availability' ? 'Submit' : 'Next';
-  
+
+    const nextButtonLabel =
+      nextPage === "/interview-availability" ? "Submit" : "Next";
+
     setActivePage(nextPage);
     setNextButtonLabel(nextButtonLabel);
   };
@@ -54,31 +53,6 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div
-        style={{
-          backgroundColor: "#b3d8f4",
-          height: "50px",
-          marginTop: "0px",
-          display: "inherit",
-          boxShadow: "-6px 0px 9px 3px grey",
-        }}
-      >
-        <div className="heading-main">
-          <div className="heading-child">
-            <div className="input-field">
-              <input type="checkbox" checked className="checkbox-round" />
-              <h4>Form Selection</h4> ---------
-              <input type="checkbox" className="checkbox-round" />
-              <h4>Set up</h4>---------
-              <input type="checkbox" className="checkbox-round" />
-              <h4>Form Creation</h4>---------
-              <input type="checkbox" className="checkbox-round" />
-              <h4>Review</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="container-outer">
         <div className="app-container">
           <Sidebar
@@ -88,19 +62,16 @@ const App = () => {
           />
 
           <div className="main-content">
-          {/* <h1>Preview</h1>
-          <p>You will be able to change the fields in the later stage</p> */}
             <div className="inside-header">
-            <div className="heading-text">
-
-<h2>Name of the Enquiry Form</h2>
-<p><span id="btm-text">One line description</span></p>
-
-
-
-<p className="very-btm">Provide the following information to process your application</p>
-</div>
-
+              <div className="heading-text">
+                <h2>Name of the Enquiry Form</h2>
+                <p>
+                  <span id="btm-text">One line description</span>
+                </p>
+                <p className="very-btm">
+                  Provide the following information to process your application
+                </p>
+              </div>
             </div>
 
             <div className="space-between-container">
