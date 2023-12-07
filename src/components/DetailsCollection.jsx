@@ -23,9 +23,7 @@ export default function DetailsCollection() {
 
   return (
     <>
-    {/* <div className="Top">
-        <h3> Name of the Enquiry Form</h3>
-      </div> */}
+    
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -81,7 +79,7 @@ export default function DetailsCollection() {
             />
           </div>
 
-          <input type="submit">Submit</input>
+          <button type="submit">Submit</button>
         </form>
 
         {formSubmitted && <p>Form submitted successfully!</p>}
