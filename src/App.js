@@ -9,7 +9,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  const [name, setName] = useState("");
+  
   const [activePage, setActivePage] = useState("/new-form");
 
   const [nextButtonLabel, setNextButtonLabel] = useState('Next');
@@ -24,7 +24,7 @@ const App = () => {
   ];
 
   const pageComponents = {
-    "/new-form": <NewForm setName={setName} />,
+    "/new-form": <NewForm/>,
     "/details-collection": <DetailsCollection />,
     "/document-collection": <DocumentCollection />,
     "/statement-of-purpose": <StatementOfPurpose />,
@@ -88,12 +88,17 @@ const App = () => {
           />
 
           <div className="main-content">
+          <h1>Preview</h1>
+          <p>You will be able to change the fields in the later stage</p>
             <div className="inside-header">
               <h2>
-                {name
-                  ? `Enquiry Form for- ${name}`
-                  : "Set Name of the enquiry form"}
+                Name of the Enquiry Form
               </h2>
+              <br/>
+              <p>One line description</p>
+              <br/>
+              <br/>
+              <p>Provide the following information to process your application</p>
             </div>
 
             <div className="space-between-container">

@@ -10,8 +10,9 @@ export default function Sidebar({ activePage, pages, onPageChange }) {
           key={index}
           className={activePage === page ? 'active' : ''}
           onClick={() => onPageChange(page)}
+          title={getPageName(page).description}
         >
-          {getPageName(page)}
+          {getPageName(page).label}
         </Link>
       ))}
     </div>
@@ -20,17 +21,20 @@ export default function Sidebar({ activePage, pages, onPageChange }) {
 
 function getPageName(page) {
   const formattedName = page
+    .split('/')
+    .slice(-1)[0]
     .split('-')
-    .slice(1)
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
   const labelsMap = {
-    'details-collection': 'Details Collection',
-    'document-collection': 'Document Collection',
-    'statement-of-purpose': 'Statement Of Purpose',
-    'interview-availability': 'Interview Availability',
+    'details-collection': { label: 'Details Collection', description: 'Collect information from candidates on their education, work experience, contact no, etc' },
+    'document-collection': { label: 'Document Collection', description: 'Save time and efforts: Explore this template to find a set of questions required for document collection' },
+    'statement-of-purpose': { label: 'Statement Of Purpose', description: 'Start creating a new form with the wide options of fields available' },
+    'interview-availability': { label: 'Interview Availability', description: 'Start creating a new form with the wide options of fields available' },
   };
 
-  return labelsMap[page.slice(1)] || formattedName;
+  return labelsMap[page.slice(1)] || { label: formattedName, description: 'No description available' };
 }
+
+
