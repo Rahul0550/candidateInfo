@@ -3,10 +3,40 @@
   height: 100vh;
 }
 
+.container-outer {
+  background: #ebe8e8;
+}
+
 .sidebar {
   width: 25%;
-  background: #f0f0f093;
+  background: #eeeded;
   padding: 20px;
+  position: relative;
+  max-height: 981px;
+  top: 16px;
+  border-radius: 8px;
+}
+
+.heading-child {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox-round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: green;
 }
 
 .sidebar a {
@@ -19,9 +49,11 @@
   color: black;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  border: 2px solid black;
-  height: 5vw;
+  border: 1.6px solid #bbb2b2;
+  box-shadow: 2px 5px 6px 1px #a3bbe8;
+  height: 7vw;
   text-align: center;
+  font-size: 18px;
 }
 
 .sidebar a:hover {
@@ -38,19 +70,21 @@ input {
 .space-between-container {
   flex: 1;
   width: 85%;
-  background-color: white
+  background-color: white;
+  overflow: overlay;
 }
 
 .main-content {
   flex: 1;
   /* align-items: center; */
   justify-content: baseline;
-  padding: 8px;
+  padding: 0px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   margin: 2% 2% 2% 7%;
-  padding-top: 5%;
-  border: 2px solid black;
+  border: 1.2px solid gray;
+  border-radius: 7px;
+
   background-color: grey;
 }
 
@@ -60,19 +94,26 @@ input {
 }
 
 .inside-header h2 {
-  background: rgb(169, 237, 237);
+  background: #b3d8f4;
   /* height: 10vh; */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin: 1vw;
-  height: 100%;
+  height: 155px !important;
+  position: relative;
+  bottom: 15px;
+  margin: 15px 0px 25px 0px;
 }
-.main-content{
+.main-content {
   align-items: center;
   width: 85%;
   background-color: white;
+}
+
+.main-content .inner-box {
+  border: 1px solid white;
 }
 .form-container {
   margin-top: 20px;
@@ -86,6 +127,20 @@ input {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+}
+
+.heading-main h3 {
+  text-align: center;
+  position: relative;
+  font-size: 30px;
+}
+
+.inside-header {
+  width: 100% !important;
+}
+
+.heading-child h4 {
+  display: inline-block;
 }
 
 /* Responsive Styles */

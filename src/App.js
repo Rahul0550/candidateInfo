@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import NewForm from "./components/NewForm";
 import DetailsCollection from "./components/DetailsCollection";
 import DocumentCollection from "./components/DocumentCollection";
@@ -9,21 +9,37 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [activePage, setActivePage] = useState('/new-form');
-  
+  const [name, setName] = useState("");
+  const [activePage, setActivePage] = useState("/new-form");
+
+  const [nextButtonLabel, setNextButtonLabel] = useState('Next');
+
+
   const pages = [
-    '/new-form',
-    '/details-collection',
-    '/document-collection',
-    '/statement-of-purpose',
-    '/interview-availability',
+    "/new-form",
+    "/details-collection",
+    "/document-collection",
+    "/statement-of-purpose",
+    "/interview-availability",
   ];
+
+  const pageComponents = {
+    "/new-form": <NewForm setName={setName} />,
+    "/details-collection": <DetailsCollection />,
+    "/document-collection": <DocumentCollection />,
+    "/statement-of-purpose": <StatementOfPurpose />,
+    "/interview-availability": <InterviewAvailability />,
+  };
 
   const handleNextClick = () => {
     const currentIndex = pages.indexOf(activePage);
     const nextIndex = currentIndex < pages.length - 1 ? currentIndex + 1 : currentIndex;
-    setActivePage(pages[nextIndex]);
+    const nextPage = pages[nextIndex];
+  
+    const nextButtonLabel = nextPage === '/interview-availability' ? 'Submit' : 'Next';
+  
+    setActivePage(nextPage);
+    setNextButtonLabel(nextButtonLabel);
   };
 
   const handlePreviousClick = () => {
@@ -32,73 +48,92 @@ const App = () => {
     setActivePage(pages[prevIndex]);
   };
 
+  const handleSidebarClick = (page) => {
+    setActivePage(page);
+  };
+
   return (
-
     <BrowserRouter>
-      <div style={{ backgroundColor: "cyan",height:"50px" }}>
-        <h3>Stepper</h3>
-      </div>
-
-      <div className="app-container">
-        <Sidebar activePage={activePage} pages={pages} />
-
-        <div className="main-content">
-
-          <div className="inside-header">
-          <h2 >
-              {name ? `Enquiry Form for- ${name}` : "Set Name of the enquiry form"}
-            </h2>
-          </div>
-
-          <div className="space-between-container">
-            <div className="main-content">
-
-              <Routes>
-                <Route path="/new-form" element={<NewForm setName={setName} />} />
-                <Route path="/details-collection" element={<DetailsCollection />} />
-                <Route
-                  path="/document-collection"
-                  element={<DocumentCollection />}
-                />
-                <Route
-                  path="/statement-of-purpose"
-                  element={<StatementOfPurpose />}
-                />
-                <Route
-                  path="/interview-availability"
-                  element={<InterviewAvailability />}
-                />
-            </Routes>
-
+      <div
+        style={{
+          backgroundColor: "#b3d8f4",
+          height: "50px",
+          marginTop: "0px",
+          display: "inherit",
+          boxShadow: "-6px 0px 9px 3px grey",
+        }}
+      >
+        <div className="heading-main">
+          <div className="heading-child">
+            <div className="input-field">
+              <input type="checkbox" className="checkbox-round" />
+              <h4>Form Selection</h4> ---------
+              <input type="checkbox" className="checkbox-round" />
+              <h4>Set up</h4>---------
+              <input type="checkbox" className="checkbox-round" />
+              <h4>Form Creation</h4>---------
+              <input type="checkbox" className="checkbox-round" />
+              <h4>Review</h4>
             </div>
           </div>
-          
         </div>
       </div>
-      <div className="button-container">
-        <button
-          style={{
-            color: "blue",
-            backgroundColor: "Red",
-            width: "150px",
-            marginRight: "20px",
-          }}
-          onClick={handlePreviousClick}
-          disabled={pages.indexOf(activePage) === 0}
-        >
-          Previous
-        </button>
-        <button
-          style={{
-            color: "blue",
-            backgroundColor: "Red",
-            width: "150px",
-          }}
-          onClick={handleNextClick}
-          disabled={pages.indexOf(activePage) === pages.length - 1}
-        >
-          Next
-        </button>
+
+      <div className="container-outer">
+        <div className="app-container">
+          <Sidebar
+            activePage={activePage}
+            pages={pages}
+            onPageChange={handleSidebarClick}
+          />
+
+          <div className="main-content">
+            <div className="inside-header">
+              <h2>
+                {name
+                  ? `Enquiry Form for- ${name}`
+                  : "Set Name of the enquiry form"}
+              </h2>
+            </div>
+
+            <div className="space-between-container">
+              <div className="main-content inner-box">
+                {pageComponents[activePage]}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="button-container">
+          <button
+            style={{
+              color: "white",
+              backgroundColor: "#1a8fe6",
+              width: "150px",
+              height: "47px",
+              margin: "0px 20px 10px 20px",
+              borderRadius: "10px",
+            }}
+            onClick={handlePreviousClick}
+            disabled={pages.indexOf(activePage) === 0}
+          >
+            Previous
+          </button>
+          <button
+            style={{
+              color: "white",
+              backgroundColor: "#1a8fe6",
+              width: "150px",
+              height: "47px",
+              margin: "0px 20px 10px 20px",
+              borderRadius: "10px",
+            }}
+            onClick={handleNextClick}
+            disabled={pages.indexOf(activePage) === pages.length - 1}
+          >
+            {nextButtonLabel}
+          </button>
+        </div>
       </div>
     </BrowserRouter>
   );

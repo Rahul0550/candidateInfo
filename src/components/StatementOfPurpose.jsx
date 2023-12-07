@@ -46,10 +46,6 @@ export default function StatementOfPurpose() {
           style={{ width: "600px", height: "100px" }}
         />
         </div>
-        
-        
-        
-        
       </div>
     </>
   );
